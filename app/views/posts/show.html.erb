@@ -1,0 +1,13 @@
+<h1 class="display-4 text-primary">「<%= @post.name %>」のデータ</h1>
+<table class="table">
+  <tr><th width="200">商品名</th>
+    <td><%= @post.name %></td></tr>
+  <tr><th>タンパク質(g)</th>
+    <td><%= @post.protein %></td></tr>
+  <tr><th>価格</th>
+    <td><%= @post.price %></td></tr>
+  <tr><th>コメント</th>
+    <td><%= @post.memo %></td></tr>
+  <tr><th>ユーザー名</th>
+    <td><%= @account.nickname %></td></tr>
+</table>

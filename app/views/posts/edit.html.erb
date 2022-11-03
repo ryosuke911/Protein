@@ -1,0 +1,21 @@
+<h1 class="display-4 text-primary">「<%= @post.name %>」の内容を編集</h1>
+<%= form_for(@post, url:{controller:'posts',action:'update', id:@post.id}) do |form| %>
+  <div class="form-group">
+    <label for="name">商品名</label>
+    <%= form.text_field :name,{class:"form-control"} %>
+  </div>
+  <div class="form-group">
+    <label for="protein">タンパク質(g)</label>
+    <%= form.text_field :protein,{class:"form-control"} %>
+  </div>
+  <div class="form-group">
+    <label for="price">価格</label>
+    <%= form.text_field :price,{class:"form-control"} %>
+  </div>
+  <div class="form-group">
+    <label for="memo">メモ</label>
+    <%= form.text_area :memo,{class:"form-control"} %>
+  </div>
+  <p>ユーザーアドレス：<%= @post.account.email %></p>
+  <%= form.submit "更新" %>
+<% end %>
