@@ -19,9 +19,6 @@
       <%= link_to("ログアウト","/accounts/sign_out",{method: :delete}) %>
       <%= link_to "マイページ", account_path(current_account.id) %>
       <%=link_to "投稿一覧","/posts" %>
-    <% else %>
-      <%= link_to "新規登録", new_account_registration_path %>
-      <%= link_to "ログイン", new_account_session_path %>
     <% end %>
     </div>
     <%= yield %>

@@ -1,20 +1,21 @@
-<h1 class="display-4 text-primary">あなたのタンパク図鑑</h1>
+<h1>あなたのタンパク図鑑</h1>
+<div class="table-responsive">
+  <table class="table">
+        <tr>
+          <th>商品名</th><th>タンパク質</th><th>価格</th><th>メモ</th>
+        </tr>
 
-<table class="table">
-  <tr>
-    <th>商品名</th><th>タンパク質(g)</th><th>価格</th><th>メモ</th>
-  </tr>
-
-<% @posts.each do |post| %>
-  <tr>
-  <% if post.account == current_account %>
-    <td width="50px"><%= link_to(post.name,"/posts/#{post.id}") %></td>
-    <td width="50px"><%= post.protein %></td>
-    <td width="50px"><%= post.price %></td>
-    <td width="50px"><%= post.memo %></td>
-    <td width="80px"><%= link_to("編集","/posts/edit/#{post.id}") %></td>
-    <td width="80px"><%= link_to("削除","/posts/delete/#{post.id}",{method:"post"}) %></td>
-  <% end %>
-  </tr>
-<% end %>
-</table>
+    <% @posts.each do |post| %>
+        <tr>
+          <% if post.account == current_account %>
+            <td width="50px"><%= link_to(post.name,"/posts/#{post.id}") %></td>
+            <td width="30px"><%= post.protein %></td>
+            <td width="30px"><%= post.price %></td>
+            <td width="30px"><%= post.memo %></td>
+            <td width="10px"><%= link_to("編集","/posts/edit/#{post.id}") %></td>
+            <td width="10px"><%= link_to("削除","/posts/delete/#{post.id}",{method:"post"}) %></td>
+          <% end %>
+        </tr>
+    <% end %>
+  </table>
+</div>

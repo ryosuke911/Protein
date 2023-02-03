@@ -21,7 +21,7 @@ class PostsController < ApplicationController
       goback
     else
       render 'add' 
-    end  
+    end
   end
 
   def edit
