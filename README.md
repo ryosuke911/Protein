@@ -1,24 +1,36 @@
-# README
+# たんぱく図鑑
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+自分が食べた物のタンパク質を記録し、自分だけのタンパク質図鑑を作成することができるアプリ。
 
-Things you may want to cover:
+URL: http://43.206.18.203/
 
-* Ruby version
+# 使用技術
 
-* System dependencies
+• Ruby 2.7.6
 
-* Configuration
+• Ruby on Rails 6.1.7
 
-* Database creation
+• MySQL 8.0.31
 
-* Database initialization
+• NginX
 
-* How to run the test suite
+• Puma
 
-* Services (job queues, cache servers, search engines, etc.)
+• AWS
 
-* Deployment instructions
+　　￮ VPC
+  
+　　￮ EC2
+  
+　　￮ RDS
+  
+# 機能一覧
 
-* ...
+• ユーザー登録、ログイン機能(devise)： 新規登録・ログイン・ログアウトが可能
+
+• 投稿機能： 自分が食べた物のタンパク質量・価格・コメントの投稿が可能
+
+• 投稿編集,削除機能
+
+• 投稿一覧機能： 自分が投稿したデータのみ閲覧可能（＝自分の投稿が他人に閲覧されることはない）。
+
