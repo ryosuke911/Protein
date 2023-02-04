@@ -1,4 +1,4 @@
-<h1 class="display-4 text-primary">「<%= @post.name %>」の内容を編集</h1>
+<h1><%= @post.name %>の内容を編集</h1>
 <%= form_for(@post, url:{controller:'posts',action:'update', id:@post.id}) do |form| %>
     <div class="form-group">
       <div class="col-sm">
