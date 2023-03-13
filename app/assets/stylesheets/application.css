@@ -17,3 +17,7 @@
  .header{
   text-align: right;
 }
+
+.pagination>li>a {          
+  color: #626060;  
+}

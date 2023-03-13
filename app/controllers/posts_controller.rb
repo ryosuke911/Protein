@@ -2,7 +2,7 @@ class PostsController < ApplicationController
  before_action :authenticate_account!, except: [:index]
  before_action :ensure_account, only: [:show, :edit, :delete]
   def index
-    @posts= Post.all
+    @posts= Post.all.page(params[:page]).per(10)
   end
 
   def show
