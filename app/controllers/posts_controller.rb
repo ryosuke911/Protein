@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
- before_action :authenticate_account!, except: [:index]
- before_action :ensure_account, only: [:show, :edit, :delete]
-  def index
-    @posts= Post.all.page(params[:page]).per(10)
+ before_action :authenticate_account!
+
+ def index
+    @posts= Post.all.page(params[:page])
   end
 
   def show
@@ -26,6 +26,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post=Post.find(params[:id])
   end
 
   def update
@@ -52,12 +53,5 @@ class PostsController < ApplicationController
   def goback
     redirect_to '/posts'
   end
-
-  def ensure_account
-    @posts= current_account.posts
-    @post= @posts.find_by(id: params[:id])
-    goback unless @post
-  end 
-
 
 end
