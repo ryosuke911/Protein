@@ -17,12 +17,14 @@ Rails.application.routes.draw do
   get 'accounts/index'
   get 'accounts/show'
 
+
+
   devise_for :accounts
   resources :posts
   resources :accounts
 
   devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+    get 'user/sign_out' => 'devise/sessions#destroy'
   end 
  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
