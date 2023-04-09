@@ -29,6 +29,12 @@
           </div>
           <div class="row ml-1">
             <div class="form-group col-sm-6">
+              <label for="category_id">カテゴリ</label><br>
+              <%= form.collection_select :category_id, Category.all, :id, :name, :include_blank => "カテゴリを選択してください" %>
+            </div>
+          </div>
+          <div class="row ml-1">
+            <div class="form-group col-sm-6">
               <label for="memo">メモ</label>
               <%= form.text_area :memo,{class:"form-control"} %>
             </div>

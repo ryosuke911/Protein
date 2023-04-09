@@ -2,7 +2,7 @@
 <div class="table-responsive">
   <table class="table">
         <tr>
-          <th>商品名</th><th>タンパク質</th><th>価格</th><th>メモ</th>
+          <th>商品名</th><th>タンパク質</th><th>価格</th><th>カテゴリ</th><th>メモ</th>
         </tr>
 
     <% @posts.each do |post| %>
@@ -11,6 +11,7 @@
             <td width="50px"><%= link_to(post.name,"/posts/#{post.id}") %></td>
             <td width="30px"><%= post.protein %></td>
             <td width="30px"><%= post.price %></td>
+            <td width="30px"><%= post.category.name %></td>
             <td width="30px"><%= post.memo %></td>
             <td width="10px"><%= link_to("編集","/posts/edit/#{post.id}") %></td>
             <td width="10px"><%= link_to("削除","/posts/delete/#{post.id}",{method:"post"}) %></td>

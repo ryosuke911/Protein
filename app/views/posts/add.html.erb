@@ -1,8 +1,9 @@
 <h1 class="ml-4">たんぱくデータの登録</h1>
 
-<div class="error">
+<div>
   <% if @post.errors.any? %>
-    <%= @msg %>
+    <p class="error"><%= @msg %></p>
+    <p class="render"><%=link_to "カテゴリ作成がまだの方・カテゴリを追加したい方はこちら","/categories/new" %></p>
   <% end %>
 </div>
 
@@ -26,6 +27,12 @@
             <div class="form-group col-sm-6">
               <label for="price">価格</label>
               <%= form.text_field :price,{class:"form-control"} %>
+            </div>
+          </div>  
+          <div class="row ml-1">
+            <div class="form-group col-sm-6">
+              <label for="category_id">カテゴリ</label><br>
+              <%= form.collection_select :category_id, Category.all, :id, :name, :include_blank => "カテゴリを選択してください" %>
             </div>
           </div>  
           <div class="row ml-1">

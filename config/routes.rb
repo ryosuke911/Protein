@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  get 'categories/new'
+  get 'categories/create'
+  get 'categories/index'
   root "hello#index"
+  
   get "/" => "hello#index"
 
   get "posts" => "posts#index"
@@ -22,6 +26,7 @@ Rails.application.routes.draw do
   devise_for :accounts
   resources :posts
   resources :accounts
+  resources :categories
 
   devise_scope :account do
     get 'accounts/sign_out' => 'devise/sessions#destroy'
