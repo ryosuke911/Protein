@@ -1,12 +1,6 @@
 <h1 class="ml-4">カテゴリ一覧</h1>
 <hr>
 
-<% if flash[:notice] %>
-  <div class="flash">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
-
 <div class="ml-4">
     <% @categories.each do |category| %>
         <p><%= category.name %></p>

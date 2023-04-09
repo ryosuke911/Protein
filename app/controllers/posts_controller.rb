@@ -18,7 +18,6 @@ class PostsController < ApplicationController
     @post=Post.new(post_params)
     @post.account_id = current_account.id
     if @post.save then
-      flash[:notice] = "たんぱくデータの登録に成功しました！"
       goback
     else
       @msg= '商品名・プロテイン・価格・カテゴリは必須入力となっています。'
@@ -34,7 +33,6 @@ class PostsController < ApplicationController
     @post=Post.find(params[:id])
     @post.account_id = current_account.id
     if @post.update(post_params)
-      flash[:notice] = "たんぱくデータの更新に成功しました！"
       goback
     else
       @msg= '商品名・プロテイン・価格は必須入力となっています。'

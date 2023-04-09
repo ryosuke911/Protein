@@ -6,7 +6,6 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:notice] = "カテゴリの追加に成功しました！"
       redirect_to categories_path
     else
       @msg= 'カテゴリ名を入力してください。'
