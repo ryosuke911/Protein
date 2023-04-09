@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_up_path_for(resourse)
     posts_path
-  end 
+  end
 
   private 
   def configure_permitted_parameters

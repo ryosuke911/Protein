@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/' => "hello#index"
+  root "hello#index"
+  get "/" => "hello#index"
 
   get "posts" => "posts#index"
 
@@ -18,13 +19,13 @@ Rails.application.routes.draw do
   get 'accounts/show'
 
 
-
   devise_for :accounts
   resources :posts
   resources :accounts
 
-  devise_scope :user do
-    get 'user/sign_out' => 'devise/sessions#destroy'
+  devise_scope :account do
+    get 'accounts/sign_out' => 'devise/sessions#destroy'
+    post 'accounts/guest_sign_in', to: 'accounts/sessions#guest_sign_in'
   end 
  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
