@@ -14,10 +14,10 @@
               <td><%= post.protein %>g</td>
               <td><%= post.price %>円</td>
               <td><%= post.category.name %></td>
-              <td><%= post.memo %></td>
+              <td class="memo"><%= post.memo %></td>
             </div>
-              <td class="link"><%= link_to("編集","/posts/edit/#{post.id}") %></td>
-              <td class="link"><%= link_to("削除","/posts/delete/#{post.id}",{method:"post"}) %></td>
+              <td><%= link_to("編集","/posts/edit/#{post.id}") %></td>
+              <td><%= link_to("削除","/posts/delete/#{post.id}",{method:"post"}) %></td>
           <% end %>
         </tr>
     <% end %>
