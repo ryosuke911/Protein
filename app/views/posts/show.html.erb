@@ -1,13 +1,13 @@
-<h1><%= @post.name %>のデータ</h1>
+<h1>詳細データ</h1>
 <table class="table">
   <tr><th width="200">商品名</th>
-    <td><%= @post.name %></td></tr>
+    <td class="food"><%= @post.name %></td></tr>
   <tr><th>タンパク質(g)</th>
-    <td><%= @post.protein %></td></tr>
+    <td><%= @post.protein %>g</td></tr>
   <tr><th>価格</th>
-    <td><%= @post.price %></td></tr>
+    <td><%= @post.price %>円</td></tr>
+  <tr><th>カテゴリ</th>
+    <td><%= @post.category.name %></td></tr>
   <tr><th>コメント</th>
     <td><%= @post.memo %></td></tr>
-  <tr><th>ユーザー名</th>
-    <td><%= @account.nickname %></td></tr>
 </table>
