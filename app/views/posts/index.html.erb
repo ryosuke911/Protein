@@ -1,20 +1,23 @@
 <h1 class="application-name">あなたのタンパク図鑑</h1>
-<div class="table-responsive">
+<div>
   <table class="table">
         <tr>
-          <th>商品名</th><th>タンパク質</th><th>価格</th><th>カテゴリ</th><th>メモ</th>
+          <th>商品名</th><th>タンパク質</th><th>価格</th>
+          <th>カテゴリ</th><th>メモ</th>
         </tr>
 
     <% @posts.each do |post| %>
         <tr>
           <% if post.account == current_account %>
-            <td width="50px"><%= link_to(post.name,"/posts/#{post.id}") %></td>
-            <td width="30px"><%= post.protein %></td>
-            <td width="30px"><%= post.price %></td>
-            <td width="30px"><%= post.category.name %></td>
-            <td width="30px"><%= post.memo %></td>
-            <td width="10px"><%= link_to("編集","/posts/edit/#{post.id}") %></td>
-            <td width="10px"><%= link_to("削除","/posts/delete/#{post.id}",{method:"post"}) %></td>
+            <div class="content">
+              <td class="food"><%= link_to(post.name,"/posts/#{post.id}") %></td>
+              <td><%= post.protein %>g</td>
+              <td><%= post.price %>円</td>
+              <td><%= post.category.name %></td>
+              <td><%= post.memo %></td>
+            </div>
+              <td class="link"><%= link_to("編集","/posts/edit/#{post.id}") %></td>
+              <td class="link"><%= link_to("削除","/posts/delete/#{post.id}",{method:"post"}) %></td>
           <% end %>
         </tr>
     <% end %>

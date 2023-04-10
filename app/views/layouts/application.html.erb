@@ -17,7 +17,6 @@
     <% if account_signed_in? %>
       <%= link_to("新規投稿","/posts/add")%>
       <%= link_to("ログアウト","/accounts/sign_out",{method: :delete}) %>
-      <%= link_to "マイページ", account_path(current_account.id) %>
       <%=link_to "投稿一覧","/posts" %>
       <%=link_to "カテゴリ一覧","/categories/index" %>
       <%=link_to "カテゴリ追加","/categories/new" %>

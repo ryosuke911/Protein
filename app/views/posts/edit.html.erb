@@ -2,7 +2,8 @@
 
 <div class="error">
   <% if @post.errors.any? %>
-    <%= @msg %>
+    <%= @msg %><br>
+    <%=link_to "カテゴリを追加したい方はこちら","/categories/new" %>
   <% end %>
 </div>
 
@@ -17,13 +18,13 @@
           </div> 
           <div class="row ml-1">
             <div class="form-group col-sm-6">
-              <label for="protein">タンパク質(g)</label>
+              <label for="protein">タンパク質(g)　※半角数字で入力してください。</label>
               <%= form.text_field :protein,{class:"form-control"} %>
             </div>
           </div>
           <div class="row ml-1">
             <div class="form-group col-sm-6">
-              <label for="price">価格</label>
+              <label for="price">価格(円)　※半角数字で入力してください。</label>
               <%= form.text_field :price,{class:"form-control"} %>
             </div>
           </div>

@@ -21,3 +21,12 @@
 .pagination>li>a {          
   color: #626060;
 }
+
+@media screen and (max-width: 640px){
+
+  .header{
+    text-align: right;
+    font-size: 13px;
+  }
+
+}

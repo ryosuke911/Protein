@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     if @post.save then
       goback
     else
-      @msg= '商品名・プロテイン・価格・カテゴリは必須入力となっています。'
+      @msg= '商品名・プロテイン・価格・カテゴリの選択は必須入力となっています。'
       render 'add' 
     end
   end
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       goback
     else
-      @msg= '商品名・プロテイン・価格は必須入力となっています。'
+      @msg= '商品名・プロテイン・価格・カテゴリの選択は必須入力となっています。'
       render 'edit'
     end
   end 

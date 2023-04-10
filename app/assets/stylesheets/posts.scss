@@ -15,3 +15,29 @@ a{
 .render{
   margin-left: 22px;
 }
+
+@media screen and (max-width: 640px){
+  .table,
+  .table td content,
+  .table th {
+    border: 1px solid #cbced2;
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  .table th {
+    display: none;
+  }
+
+  .food {
+    background-color: #e9c15b;
+    font-weight: bolder;
+  }
+
+  .table td content{
+    padding: 4px 12px;
+    display: block;
+    width: 100%;
+  }
+
+}
