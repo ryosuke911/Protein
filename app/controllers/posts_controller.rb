@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
  before_action :authenticate_account!
+ before_action :guest_check, only: [:delete]
 
  def index
     @posts= Post.all.page(params[:page])
@@ -41,6 +42,7 @@ class PostsController < ApplicationController
   end 
 
   def delete
+    @post=Post.find(params[:id])
     @post.destroy
     goback
   end  
@@ -54,4 +56,9 @@ class PostsController < ApplicationController
     redirect_to '/posts'
   end
 
+  def guest_check
+    if current_account == Account.find(1)
+      redirect_to '/posts'
+    end
+  end
 end

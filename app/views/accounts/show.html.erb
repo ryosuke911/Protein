@@ -2,8 +2,3 @@
 <hr>
 <p><span>email: </span><%= @account.email %></p>
 <p><span>account_id: </span><%= @account.id %></p>
-
-<% @posts.each do |post| %>
-<hr>
-<p><span>投稿内容：</span><%= link_to post.name, "/posts/#{post.id}" %></p>
-<% end %>

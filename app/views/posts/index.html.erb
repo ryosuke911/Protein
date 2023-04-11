@@ -1,4 +1,9 @@
 <h1 class="application-name">あなたのタンパク図鑑</h1>
+
+<% if current_account.id == 1 %>
+  <p class="warnings">※ ゲストモードでは投稿の削除を行うことができません。</p>
+<% end %>
+
 <div>
   <table class="table">
         <tr>

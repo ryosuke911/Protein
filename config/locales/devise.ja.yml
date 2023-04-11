@@ -70,7 +70,7 @@ ja:
         sign_up: "アカウント登録"
     sessions:
       new:
-        sign_in: "ログイン"
+        sign_in: ""
     shared:
       links:
         back: "戻る"
