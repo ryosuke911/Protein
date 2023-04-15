@@ -2,7 +2,7 @@ class PostsController < ApplicationController
  before_action :authenticate_account!
  before_action :guest_check, only: [:delete]
 
- def index
+  def index
     @posts= Post.all.page(params[:page])
   end
 
@@ -46,6 +46,11 @@ class PostsController < ApplicationController
     @post.destroy
     goback
   end  
+
+  def select_category_index
+    @category = Category.find(params[:id])
+    @posts = @category.posts
+  end
 
   private
   def post_params

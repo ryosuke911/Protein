@@ -3,6 +3,6 @@
 
 <div class="ml-4">
     <% @categories.each do |category| %>
-        <p><%= category.name %></p>
+        <p><%= link_to category.name,controller: 'posts', action: 'select_category_index', id: category.id %></p>
     <% end %>
 </div>

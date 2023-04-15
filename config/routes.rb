@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
   get 'accounts/index'
   get 'accounts/show'
-
+  
+  get "posts/select_category_index/:id" => "posts#select_category_index"
 
   devise_for :accounts
   resources :posts
