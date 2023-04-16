@@ -32,7 +32,7 @@
           <div class="row ml-1">
             <div class="form-group col-sm-6">
               <label for="category_id">カテゴリ</label><br>
-                  <%= form.collection_select :category_id, Category.where(id: current_account.id), :id, :name, :include_blank => "カテゴリを選択してください" %>
+                  <%= form.collection_select :category_id, Category.where(account_id: current_account.id), :id, :name, :include_blank => "カテゴリを選択してください" %>
             </div>
           </div>  
           <div class="row ml-1">
