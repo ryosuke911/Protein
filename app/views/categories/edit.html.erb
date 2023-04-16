@@ -1,0 +1,19 @@
+<h1 class="ml-4">カテゴリの編集</h1>
+
+<div class="error">
+  <% if @category.errors.any? %>
+    <%= @msg %>
+  <% end %>
+</div>
+
+<div class="col-sm-6">
+    <%= form_with model: @category, local: true do |f| %>
+        <div class="form_group col-sm-6">
+            <label for="name">カテゴリ名</label>
+            <%= f.text_field :name,{class:"form-control"} %>
+        </div>
+        <div class="adding col-sm-6">
+            <%= f.submit "更新する" %>
+        </div>
+    <% end %>
+</div>

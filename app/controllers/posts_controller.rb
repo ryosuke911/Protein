@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts= Post.all.page(params[:page])
+    @categories = Category.all
   end
 
   def show

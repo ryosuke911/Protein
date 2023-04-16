@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'categories/new'
   get 'categories/create'
   get 'categories/index'
+  get 'categories/edit/:id' => "categories#edit"
   root "hello#index"
   
   get "/" => "hello#index"

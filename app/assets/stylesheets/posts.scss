@@ -8,6 +8,7 @@ h2{
 }
 
 .application-name{
+  font-family: "Hiragino Maru Gothic Pro", sans-serif;
   color: #fdbf64;
   margin: 10px;
 }
@@ -30,6 +31,26 @@ a{
   margin-left: 22px;
 }
 
+.table{
+  float: left;
+  width:  75%;
+}
+
+.category{
+  margin-right: 15px;
+  padding: 10px 40px;
+  border:dashed 2px #b3ada4;
+  float: right;
+  width: 20%;
+  text-align: center;
+}
+
+.sub-title{
+  font-family: "Hiragino Maru Gothic Pro", sans-serif;
+  font-size: 25px;
+  border-bottom: 3px solid #00a5dd;
+}
+
 @media screen and (max-width: 640px){
   .table,
   .table td content,
@@ -37,6 +58,8 @@ a{
     border: 1px solid #cbced2;
     border-collapse: collapse;
     text-align: center;
+    font-size: 11px;
+    width: 100%;
   }
 
   .table th {
@@ -48,13 +71,9 @@ a{
     font-weight: bolder;
   }
 
-  .table td content{
-    padding: 4px 12px;
-    display: block;
-    width: 100%;
-  }
-
-  .memo{
+  .memo,
+  .category {
     display: none;
   }
 }
+

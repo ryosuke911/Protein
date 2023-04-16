@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
       redirect_to categories_path
     else
       @msg= 'カテゴリ名を入力してください。'
-      render :new
+      render 'new'
     end
   end
 
@@ -17,7 +17,19 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  
+  def edit
+    @category=Category.find(params[:id])
+  end
+
+  def update
+    @category=Category.find(params[:id])
+    if @category.update(category_params)
+      redirect_to categories_path
+    else
+      @msg= 'カテゴリ名を入力してください。'
+      render 'edit'
+    end
+  end 
 
   private
     def category_params

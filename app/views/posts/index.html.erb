@@ -4,30 +4,33 @@
   <p class="warnings">※ ゲストモードでは投稿の削除を行うことができません。</p>
 <% end %>
 
-<div>
-  <table class="table">
-        <tr>
-          <th>商品名</th><th>タンパク質</th><th>価格</th>
-          <th>カテゴリ</th><th>メモ</th>
-        </tr>
 
-    <% @posts.each do |post| %>
-        <tr>
-          <% if post.account == current_account %>
-            <div class="content">
-              <td class="food"><%= link_to(post.name,"/posts/#{post.id}") %></td>
-              <td><%= post.protein %>g</td>
-              <td><%= post.price %>円</td>
-              <td><%= link_to(post.category.name,"posts/select_category_index/#{post.category.id}") %></td>
-              <td class="memo"><%= post.memo %></td>
-            </div>
-              <td><%= link_to("編集","/posts/edit/#{post.id}") %></td>
-              <td><%= link_to("削除","/posts/delete/#{post.id}",{method:"post"}) %></td>
-          <% end %>
-        </tr>
+<table class="table">
+          <tr>
+            <th>商品名</th><th>タンパク質</th><th>価格</th>
+            <th>カテゴリ</th><th>メモ</th><th colspan="2">カスタム</th>
+          </tr>
+
+      <% @posts.each do |post| %>
+          <tr>
+            <% if post.account == current_account %>
+              <div class="content">
+                <td class="food"><%= link_to(post.name,"/posts/#{post.id}") %></td>
+                <td><%= post.protein %>g</td>
+                <td><%= post.price %>円</td>
+                <td><%= link_to(post.category.name,"posts/select_category_index/#{post.category.id}") %></td>
+                <td class="memo"><%= post.memo %></td>
+              </div>
+                <td><%= link_to("編集","/posts/edit/#{post.id}") %></td>
+                <td><%= link_to("削除","/posts/delete/#{post.id}",{method:"post"}) %></td>
+            <% end %>
+          </tr>
+      <% end %>
+</table>
+
+<div class="category">
+    <p class="sub-title">カテゴリ別検索</p>
+    <% @categories.each do |category| %>
+      <div><%= link_to(category.name,"posts/select_category_index/#{category.id}") %></div>
     <% end %>
-  </table>
 </div>
-<br>
-<div><%= paginate @posts %></div>
-<br>
