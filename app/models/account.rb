@@ -5,6 +5,7 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :posts
+  has_many :categories
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |account|

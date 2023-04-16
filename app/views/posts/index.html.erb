@@ -30,7 +30,9 @@
 
 <div class="category">
     <p class="sub-title">カテゴリ別検索</p>
-    <% @categories.each do |category| %>
-      <div><%= link_to(category.name,"posts/select_category_index/#{category.id}") %></div>
-    <% end %>
+      <% @categories.each do |category| %>
+        <% if category.account == current_account %>
+          <div><%= link_to(category.name,"posts/select_category_index/#{category.id}") %></div>
+        <% end %>
+      <% end %>
 </div>

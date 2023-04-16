@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def add
-    @post=Post.new
+    @post=Post.new    
   end
 
   def create
